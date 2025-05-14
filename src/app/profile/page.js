@@ -1,7 +1,7 @@
 // app/profile/page.js
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import StarBackground from '@/components/StarBackground.js';
 
@@ -91,6 +91,7 @@ const Profile = () => {
       </div>
 
       <div className="profile-details">
+        {/* Team Information Section */}
         <div className="detail-card">
           <h3>Team Information</h3>
           {isEditing ? (
@@ -100,7 +101,7 @@ const Profile = () => {
                 <input type="text" name="teamName" value={userData.teamName} onChange={handleChange} />
               </div>
               <div className="form-group">
-                <label>Captain's Name:</label>
+                <label>{"Captain's Name:"}</label>
                 <input type="text" name="captainName" value={userData.captainName} onChange={handleChange} />
               </div>
               <div className="form-group">
@@ -121,6 +122,7 @@ const Profile = () => {
           )}
         </div>
 
+        {/* Team Members Section */}
         <div className="detail-card">
           <h3>Team Members</h3>
           {isEditing ? (
@@ -147,6 +149,7 @@ const Profile = () => {
           )}
         </div>
 
+        {/* Contact Information Section */}
         <div className="detail-card">
           <h3>Contact Information</h3>
           {isEditing ? (
@@ -173,6 +176,7 @@ const Profile = () => {
           )}
         </div>
 
+        {/* Experience Level Section */}
         <div className="detail-card">
           <h3>Experience Level</h3>
           {isEditing ? (
@@ -190,4 +194,11 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+// Wrapping Profile with Suspense for Client-Side Rendering
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading profile...</div>}>
+      <Profile />
+    </Suspense>
+  );
+}

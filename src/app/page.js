@@ -102,7 +102,7 @@ const Home = () => {
           {isExpanded && (
             <span className="expanded-content">
               <br /><br />
-              This year's edition features special rounds on exoplanet discoveries and recent Mars missions.
+              This Year&apos;s edition features special rounds on exoplanet discoveries and recent Mars missions.
               Participants will face challenges ranging from identifying celestial objects to solving physics
               problems related to space travel. The quiz will be conducted in three stages: preliminary,
               semi-final, and final, with exciting prizes for the winning team.
@@ -134,7 +134,8 @@ const Home = () => {
 
       {/* RULES */}
       <div className="rules-section">
-        <h2>Rules & Guidelines</h2>
+       <h2>Rules &apos; Guidelines</h2>
+
         <ul>
           <li>Max 2 participants per team.</li>
           <li>No use of mobile phones or the internet during the quiz.</li>

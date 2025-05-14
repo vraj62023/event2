@@ -59,7 +59,7 @@ const Team = () => {
 
       <div className="join-team">
         <h2>Want to join our team?</h2>
-        <p>We're always looking for passionate space enthusiasts!</p>
+        <p>{"We're always looking for passionate space enthusiasts!"}</p>
         <button className="cta-button">Contact Us</button>
       </div>
     </div>
